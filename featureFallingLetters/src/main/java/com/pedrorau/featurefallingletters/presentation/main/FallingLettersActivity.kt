@@ -1,43 +1,29 @@
-package com.pedrorau.poc.presentation.main
+package com.pedrorau.featurefallingletters.presentation.main
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.pedrorau.core.navigation.FeatureNavigator
-import com.pedrorau.poc.presentation.theme.PocTheme
-import org.koin.android.ext.android.inject
+import com.pedrorau.featurefallingletters.theme.PocTheme
 
-class MainActivity : ComponentActivity() {
-
-    private val featureNavigator: FeatureNavigator by inject()
+class FallingLettersActivity: ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        setContent{
             PocTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainNavHost {
+                    FallingLettersScreen {
                         finish()
                     }
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PocTheme {
-        //
     }
 }

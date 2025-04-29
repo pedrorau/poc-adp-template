@@ -11,6 +11,11 @@ composeBom = "2024.04.01"
 navigationComposeVersion = "2.7.7"
 ktorVersion = "2.3.8"
 kotlinxSerializationVersion = "1.6.2"
+appcompat = "1.6.1"
+material = "1.10.0"
+koinVersion = "3.4.0"
+appcompatVersion = "1.6.1"
+materialVersion = "1.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,10 +39,14 @@ ktor-content = { group = "io.ktor", name = "ktor-client-content-negotiation", ve
 ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktorVersion"}
 ktor-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorVersion"}
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion"}
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koinVersion"}
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 

@@ -6,6 +6,7 @@ import com.pedrorau.poc.data.repository.QuizRepositoryImpl
 import com.pedrorau.poc.domain.repository.QuizRepository
 import com.pedrorau.poc.domain.useCases.GetConfigParametersUseCase
 import com.pedrorau.poc.domain.useCases.GetQuizUseCase
+import org.koin.dsl.module
 
 object AppModule {
 
@@ -16,4 +17,8 @@ object AppModule {
 
     val getQuizUseCase = GetQuizUseCase(quizRepository)
     val getConfigParametersUseCase = GetConfigParametersUseCase(quizRepository)
+}
+
+val appModule = module{
+    // Nothing noew
 }

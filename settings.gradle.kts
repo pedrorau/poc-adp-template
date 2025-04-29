@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "poc"
 include(":app")
- 
+include(":featureFallingLetters")
+include(":core")
+include(":navigation")

@@ -5,6 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
+import com.pedrorau.navigation.AppDestinations
+import com.pedrorau.navigation.appNavGraph
 import com.pedrorau.poc.presentation.droidHoot.DroidHootScreen
 import com.pedrorau.poc.presentation.droidHoot.QuizScreen
 import com.pedrorau.poc.presentation.fallingLetters.FallingLettersScreen
@@ -15,7 +17,7 @@ fun MainNavHost(
 ) {
     val navController = rememberNavController()
 
-    val navGraph = navController.createGraph(
+    val oldNavGraph = navController.createGraph(
         startDestination = Screens.Main.route
     ) {
         composable(Screens.Main.route) {
@@ -56,6 +58,13 @@ fun MainNavHost(
             )
         }
     }
+
+    val navGraph = navController.createGraph(
+        startDestination = AppDestinations.HOME_ROUTE,
+        builder = {
+            appNavGraph(navController)
+        }
+    )
 
     NavHost(
         navController = navController,
